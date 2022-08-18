@@ -9,10 +9,10 @@ public class InputView {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public List<Player> getPlayers() {
+    public Players getPlayers() {
         List<String> names = getNames();
         List<Integer> moneys = getMoneys(names.size());
-        return createMembers(names, moneys);
+        return new Players(createMembers(names, moneys));
     }
 
     private List<Player> createMembers(List<String> names, List<Integer> moneys) {

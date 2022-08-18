@@ -66,14 +66,14 @@ public class InputViewTest {
         };
 
         //when
-        List<Player> players = inputView.getPlayers();
+        Players players = inputView.getPlayers();
 
         //then
-        assertThat(players.get(0).getMoney()).isEqualTo(10000);
-        assertThat(players.get(0).getName()).isEqualTo("pobi");
-
-        assertThat(players.get(1).getName()).isEqualTo("jason");
-        assertThat(players.get(1).getMoney()).isEqualTo(10000);
+        assertThat(players.getPlayers().get(0).getMoney()).isEqualTo(10000);
+        assertThat(players.getPlayers().get(0).getName()).isEqualTo("pobi");
+        
+        assertThat(players.getPlayers().get(1).getName()).isEqualTo("jason");
+        assertThat(players.getPlayers().get(1).getMoney()).isEqualTo(10000);
 
     }
 }
