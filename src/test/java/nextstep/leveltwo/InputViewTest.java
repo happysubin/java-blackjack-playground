@@ -25,6 +25,7 @@ public class InputViewTest {
     @Test
     void inputPlayerMoney(){
         //given
+
         InputView inputView = new InputView(){
 
             @Override
@@ -38,14 +39,14 @@ public class InputViewTest {
             }
         };
 
-        int numberOfPlayer = inputView.getNames().size();
+        List<String> names = inputView.getNames();
 
         //given
-        List<Integer> moneys = inputView.getMoneys(numberOfPlayer);
+        List<Integer> moneys = inputView.getMoneys(names);
 
         assertThat(moneys.get(0)).isEqualTo(10000);
         assertThat(moneys.get(1)).isEqualTo(10000);
-        assertThat(moneys.size()).isEqualTo(numberOfPlayer);
+        assertThat(moneys.size()).isEqualTo(names.size());
 
     }
 

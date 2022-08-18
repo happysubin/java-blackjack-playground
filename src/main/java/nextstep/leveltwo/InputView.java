@@ -9,9 +9,13 @@ public class InputView {
 
     private Scanner scanner = new Scanner(System.in);
 
+    public static final String INPUT_PLAYER_NAME_ANNOUNCEMENT_MESSAGE = "게임에 참여할 사람의 이름을 입력하세요.(쉼표 기준으로 분리)";
+    public static final String INPUT_PLAYER_MONEY_ANNOUNCEMENT_MESSAGE = "의 배팅 금액은?";
+
+
     public Players getPlayers() {
         List<String> names = getNames();
-        List<Integer> moneys = getMoneys(names.size());
+        List<Integer> moneys = getMoneys(names);
         return new Players(createMembers(names, moneys));
     }
 
@@ -33,12 +37,14 @@ public class InputView {
     }
 
     public String getNameString(){
+        System.out.println(INPUT_PLAYER_NAME_ANNOUNCEMENT_MESSAGE);
         return scanner.next();
     }
 
-    public List<Integer> getMoneys(int numberOfPlayer) {
+    public List<Integer> getMoneys(List<String> names) {
         List<Integer> moneys = new ArrayList<>();
-        for(int i = 0 ; i < numberOfPlayer; i++){
+        for(int i = 0 ; i < names.size(); i++){
+            System.out.println(names.get(i) + INPUT_PLAYER_MONEY_ANNOUNCEMENT_MESSAGE);
             moneys.add(getMoney());
         }
         return moneys;
