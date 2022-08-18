@@ -1,9 +1,10 @@
 package nextstep.leveltwo;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class InputViewTest {
 
@@ -17,8 +18,8 @@ public class InputViewTest {
         };
         List<String> names = inputView.getNames();
 
-        Assertions.assertThat(names.get(0)).isEqualTo("pobi");
-        Assertions.assertThat(names.get(1)).isEqualTo("jason");
+        assertThat(names.get(0)).isEqualTo("pobi");
+        assertThat(names.get(1)).isEqualTo("jason");
     }
 
     @Test
@@ -42,9 +43,37 @@ public class InputViewTest {
         //given
         List<Integer> moneys = inputView.getMoneys(numberOfPlayer);
 
-        Assertions.assertThat(moneys.get(0)).isEqualTo(10000);
-        Assertions.assertThat(moneys.get(1)).isEqualTo(10000);
-        Assertions.assertThat(moneys.size()).isEqualTo(numberOfPlayer);
+        assertThat(moneys.get(0)).isEqualTo(10000);
+        assertThat(moneys.get(1)).isEqualTo(10000);
+        assertThat(moneys.size()).isEqualTo(numberOfPlayer);
+
+    }
+
+    @Test
+    void inputViewCreatePlayer(){
+        //given
+        InputView inputView = new InputView(){
+
+            @Override
+            public String getNameString() {
+                return "pobi,jason";
+            }
+
+            @Override
+            public int getMoney() {
+                return 10000;
+            }
+        };
+
+        //when
+        List<Player> players = inputView.getPlayers();
+
+        //then
+        assertThat(players.get(0).getMoney()).isEqualTo(10000);
+        assertThat(players.get(0).getName()).isEqualTo("pobi");
+
+        assertThat(players.get(1).getName()).isEqualTo("jason");
+        assertThat(players.get(1).getMoney()).isEqualTo(10000);
 
     }
 }

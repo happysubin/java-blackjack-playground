@@ -9,6 +9,21 @@ public class InputView {
 
     private Scanner scanner = new Scanner(System.in);
 
+    public List<Player> getPlayers() {
+        List<String> names = getNames();
+        List<Integer> moneys = getMoneys(names.size());
+        return createMembers(names, moneys);
+    }
+
+    private List<Player> createMembers(List<String> names, List<Integer> moneys) {
+        List<Player> players = new ArrayList<>();
+        for (int i = 0; i < names.size(); i ++) {
+            players.add(new Player(names.get(i), moneys.get(i)));
+        }
+        return players;
+    }
+
+
     public List<String> getNames() {
         return splitAndGetNameList();
     }
