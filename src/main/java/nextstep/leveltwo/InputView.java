@@ -12,7 +12,6 @@ public class InputView {
     public static final String INPUT_PLAYER_NAME_ANNOUNCEMENT_MESSAGE = "게임에 참여할 사람의 이름을 입력하세요.(쉼표 기준으로 분리)";
     public static final String INPUT_PLAYER_MONEY_ANNOUNCEMENT_MESSAGE = "의 배팅 금액은?";
 
-
     public Players getPlayers() {
         List<String> names = getNames();
         List<Integer> moneys = getMoneys(names);
@@ -26,7 +25,6 @@ public class InputView {
         }
         return players;
     }
-
 
     public List<String> getNames() {
         return splitAndGetNameList();
