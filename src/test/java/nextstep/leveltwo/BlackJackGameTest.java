@@ -6,19 +6,21 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-public class CardsOfMembersTest {
+import static org.assertj.core.api.Assertions.*;
+
+public class BlackJackGameTest {
 
     @Test
-    void createCardsOfMembers() {
-
+    void createGame(){
         //given
         List<Player> playerList = Arrays.asList(new Player("su", 10000), new Player("bin", 20000));
         Players players = new Players(playerList);
 
         //when
-        CardsOfMembers cardsOfMembers = new CardsOfMembers(players.getNames());
+        BlackJackGame blackJackGame = new BlackJackGame(players);
 
         //then
-        Assertions.assertThat(cardsOfMembers.getCardsOfMembers().size()).isEqualTo(2);
+        assertThat(blackJackGame.getPlayers().getPlayers().size()).isEqualTo(2);
+        assertThat(blackJackGame.getCardsOfMembers().getCardsOfMembers().size()).isEqualTo(2);
     }
 }
