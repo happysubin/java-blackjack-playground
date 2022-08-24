@@ -23,8 +23,8 @@ public class CardsOfMembers {
         return result;
     }
 
-    public void addCard(String su, Card card) {
-        cardsOfMembers.get(su).add(card);
+    public void addCard(String name, Card card) {
+        cardsOfMembers.get(name).add(card);
     }
 
     public int getCardsTotalScore(String name) {

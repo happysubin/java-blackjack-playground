@@ -21,14 +21,15 @@ public class BlackJackGame {
     }
 
     public void addTwoCardToCardsOfMembers() {
+        for (int i = 0; i < 2; i++) {
+            addCardToCardsOfMembers();
+        }
+    }
+
+    private void addCardToCardsOfMembers(){
         players.getNames()
                 .stream()
-                .forEach(name -> {
-                    Card card1 = getCard();
-                    Card card2 = getCard();
-                    cardsOfMembers.addCard(name, card1);
-                    cardsOfMembers.addCard(name, card2);
-                });
+                .forEach(name -> cardsOfMembers.addCard(name, getCard()));
     }
 
     public Card getCard(){
