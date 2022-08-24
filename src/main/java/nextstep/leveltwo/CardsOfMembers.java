@@ -26,4 +26,8 @@ public class CardsOfMembers {
     public Map<String, List<Card>> getCardsOfMembers() {
         return cardsOfMembers;
     }
+
+    public void addCard(String su, Card card) {
+        cardsOfMembers.get(su).add(card);
+    }
 }
