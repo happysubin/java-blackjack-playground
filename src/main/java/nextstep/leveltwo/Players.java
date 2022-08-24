@@ -1,5 +1,6 @@
 package nextstep.leveltwo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Players {
@@ -12,5 +13,13 @@ public class Players {
 
     public List<Player> getPlayers() {
         return players;
+    }
+
+    public List<String> getNames() {
+        List<String> names = new ArrayList<>();
+        for (Player player : players) {
+            names.add(player.getName());
+        }
+        return names;
     }
 }
