@@ -28,12 +28,10 @@ public class CardsOfMembers {
     }
 
     public int getCardsTotalScore(String name) {
-        List<Card> cards = cardsOfMembers.get(name);
-        int result = 0;
-        for (Card card : cards) {
-            result += card.getScore();
-        }
-        return result;
+        return  cardsOfMembers.get(name)
+                .stream()
+                .map(card -> card.getScore())
+                .reduce(0, (sum, cardScore) -> sum + cardScore);
     }
 
     //최대한 게터는 테스트에서만 사용하기

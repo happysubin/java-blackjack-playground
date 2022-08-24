@@ -2,6 +2,7 @@ package nextstep.leveltwo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Players {
 
@@ -16,10 +17,8 @@ public class Players {
     }
 
     public List<String> getNames() {
-        List<String> names = new ArrayList<>();
-        for (BasePlayer player : players) {
-            names.add(player.getName());
-        }
-        return names;
+        return players.stream()
+                .map(player -> player.getName())
+                .collect(Collectors.toList());
     }
 }
