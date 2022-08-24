@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class CardsOfMembersTest {
 
     @Test
@@ -22,7 +24,7 @@ public class CardsOfMembersTest {
         CardsOfMembers cardsOfMembers = new CardsOfMembers(players.getNames());
 
         //then
-        Assertions.assertThat(cardsOfMembers.getCardsOfMembers().size()).isEqualTo(2);
+        assertThat(cardsOfMembers.getCardsOfMembers().size()).isEqualTo(2);
     }
 
     @Test
@@ -39,6 +41,26 @@ public class CardsOfMembersTest {
         cardsOfMembers.addCard(name, card);
 
         //then
-        Assertions.assertThat(cardsOfMembers.getCardsOfMembers().get(name)).containsExactly(card);
+        assertThat(cardsOfMembers.getCardsOfMembers().get(name)).containsExactly(card);
+    }
+
+    @Test
+    void getCardsTotalScore() {
+
+        //given
+        String name = "su";
+        List<Player> playerList = Arrays.asList(new Player(name, 10000), new Player("bin", 20000));
+        Players players = new Players(playerList);
+        CardsOfMembers cardsOfMembers = new CardsOfMembers(players.getNames());
+        Card card1 = new Card(Suit.CLOVER, Level.EIGHT);
+        Card card2 = new Card(Suit.CLOVER, Level.JACK);
+        cardsOfMembers.addCard(name, card1);
+        cardsOfMembers.addCard(name, card2);
+
+        //when
+        int finalScore = cardsOfMembers.getCardsTotalScore(name);
+
+        //then
+        assertThat(finalScore).isEqualTo(18);
     }
 }

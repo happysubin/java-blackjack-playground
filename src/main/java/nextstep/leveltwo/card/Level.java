@@ -29,4 +29,8 @@ public enum Level {
         return Arrays.stream(values())
                 .collect(Collectors.toList());
     }
+
+    public int getScore() {
+        return score;
+    }
 }

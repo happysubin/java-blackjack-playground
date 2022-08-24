@@ -17,4 +17,8 @@ public class Card {
     public Level getLevel() {
         return level;
     }
+
+    public int getScore() {
+        return level.getScore();
+    }
 }

@@ -23,11 +23,21 @@ public class CardsOfMembers {
         return result;
     }
 
-    public Map<String, List<Card>> getCardsOfMembers() {
-        return cardsOfMembers;
-    }
-
     public void addCard(String su, Card card) {
         cardsOfMembers.get(su).add(card);
+    }
+
+    public int getCardsTotalScore(String name) {
+        List<Card> cards = cardsOfMembers.get(name);
+        int result = 0;
+        for (Card card : cards) {
+            result += card.getScore();
+        }
+        return result;
+    }
+
+    //최대한 게터는 테스트에서만 사용하기
+    public Map<String, List<Card>> getCardsOfMembers() {
+        return cardsOfMembers;
     }
 }
