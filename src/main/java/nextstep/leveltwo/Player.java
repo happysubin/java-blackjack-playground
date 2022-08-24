@@ -1,6 +1,6 @@
 package nextstep.leveltwo;
 
-public class Player {
+public class Player implements BasePlayer {
 
     private String name;
     private int money;

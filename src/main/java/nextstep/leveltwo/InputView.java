@@ -18,8 +18,8 @@ public class InputView {
         return new Players(createMembers(names, moneys));
     }
 
-    private List<Player> createMembers(List<String> names, List<Integer> moneys) {
-        List<Player> players = new ArrayList<>();
+    private List<BasePlayer> createMembers(List<String> names, List<Integer> moneys) {
+        List<BasePlayer> players = new ArrayList<>();
         for (int i = 0; i < names.size(); i ++) {
             players.add(new Player(names.get(i), moneys.get(i)));
         }

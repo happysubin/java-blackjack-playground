@@ -5,19 +5,19 @@ import java.util.List;
 
 public class Players {
 
-    private List<Player> players;
+    private List<BasePlayer> players;
 
-    public Players(List<Player> players) {
+    public Players(List<BasePlayer> players) {
         this.players = players;
     }
 
-    public List<Player> getPlayers() {
+    public List<BasePlayer> getPlayers() {
         return players;
     }
 
     public List<String> getNames() {
         List<String> names = new ArrayList<>();
-        for (Player player : players) {
+        for (BasePlayer player : players) {
             names.add(player.getName());
         }
         return names;

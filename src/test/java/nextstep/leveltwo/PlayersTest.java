@@ -13,7 +13,7 @@ public class PlayersTest {
     @Test
     void createPlayers(){
         //given
-        List<Player> playerList = Arrays.asList(new Player("su", 10000), new Player("bin", 20000));
+        List<BasePlayer> playerList = Arrays.asList(new Player("su", 10000), new Player("bin", 20000));
 
         //when
         Players players = new Players(playerList);
@@ -26,7 +26,7 @@ public class PlayersTest {
     @Test
     void getPlayersName(){
         //given
-        List<Player> playerList = Arrays.asList(new Player("su", 10000), new Player("bin", 20000));
+        List<BasePlayer> playerList = Arrays.asList(new Player("su", 10000), new Player("bin", 20000));
         Players players = new Players(playerList);
 
         //when

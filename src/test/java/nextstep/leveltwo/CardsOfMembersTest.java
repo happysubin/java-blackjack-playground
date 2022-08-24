@@ -17,7 +17,7 @@ public class CardsOfMembersTest {
     void createCardsOfMembers() {
 
         //given
-        List<Player> playerList = Arrays.asList(new Player("su", 10000), new Player("bin", 20000));
+        List<BasePlayer> playerList = Arrays.asList(new Player("su", 10000), new Player("bin", 20000));
         Players players = new Players(playerList);
 
         //when
@@ -32,7 +32,7 @@ public class CardsOfMembersTest {
 
         //given
         String name = "su";
-        List<Player> playerList = Arrays.asList(new Player(name, 10000), new Player("bin", 20000));
+        List<BasePlayer> playerList = Arrays.asList(new Player(name, 10000), new Player("bin", 20000));
         Players players = new Players(playerList);
         CardsOfMembers cardsOfMembers = new CardsOfMembers(players.getNames());
         Card card = new Card(Suit.CLOVER, Level.ACE);
@@ -49,7 +49,7 @@ public class CardsOfMembersTest {
 
         //given
         String name = "su";
-        List<Player> playerList = Arrays.asList(new Player(name, 10000), new Player("bin", 20000));
+        List<BasePlayer> playerList = Arrays.asList(new Player(name, 10000), new Player("bin", 20000));
         Players players = new Players(playerList);
         CardsOfMembers cardsOfMembers = new CardsOfMembers(players.getNames());
         Card card1 = new Card(Suit.CLOVER, Level.EIGHT);
