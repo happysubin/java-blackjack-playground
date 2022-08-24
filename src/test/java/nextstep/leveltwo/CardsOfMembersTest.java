@@ -14,11 +14,9 @@ public class CardsOfMembersTest {
         Players players = new Players(playerList);
 
         //when
-        CardsOfMembers cardsOfMembers = new CardsOfMembers(players);
+        CardsOfMembers cardsOfMembers = new CardsOfMembers(players.getNames());
 
         //then
         Assertions.assertThat(cardsOfMembers.getCardsOfMembers().size()).isEqualTo(2);
-        Assertions.assertThat(cardsOfMembers.getPlayers().getPlayers().size()).isEqualTo(2);
-
     }
 }
