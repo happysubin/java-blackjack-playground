@@ -44,4 +44,22 @@ public class BlackJackGameTest {
         assertThat(blackJackGame.getPlayers().getPlayers().size()).isEqualTo(3);
         assertThat(blackJackGame.getCardsOfMembers().getCardsOfMembers().size()).isEqualTo(3);
     }
+
+    @Test
+    void addTwoCardToCardsOfMembers(){
+        //given
+        List<BasePlayer> playerList = new ArrayList<>();
+        playerList.add(new Player("su", 10000));
+        playerList.add(new Player("bin", 20000));
+        Players players = new Players(playerList);
+        BlackJackGame blackJackGame = new BlackJackGame(players);
+
+        //when
+        blackJackGame.addTwoCardToCardsOfMembers();
+
+        //then
+        assertThat(blackJackGame.getCardsOfMembers().getCardsOfMembers().get("su").size()).isEqualTo(2);
+        assertThat(blackJackGame.getCardsOfMembers().getCardsOfMembers().get("bin").size()).isEqualTo(2);
+        assertThat(blackJackGame.getCardsOfMembers().getCardsOfMembers().get("딜러").size()).isEqualTo(2);
+    }
 }

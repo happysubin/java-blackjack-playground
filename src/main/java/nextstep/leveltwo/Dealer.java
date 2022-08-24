@@ -15,4 +15,9 @@ public class Dealer implements BasePlayer {
     public int getMoney() {
         throw new UnsupportedOperationException("딜러는 베팅한 금액이 없습니다");
     }
+
+    @Override
+    public boolean isDealer() {
+        return true;
+    }
 }

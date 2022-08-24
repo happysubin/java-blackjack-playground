@@ -17,4 +17,9 @@ public class Player implements BasePlayer {
     public int getMoney() {
         return money;
     }
+
+    @Override
+    public boolean isDealer() {
+        return false;
+    }
 }

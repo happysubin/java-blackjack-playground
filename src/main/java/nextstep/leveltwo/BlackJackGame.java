@@ -20,6 +20,21 @@ public class BlackJackGame {
         return players;
     }
 
+    public void addTwoCardToCardsOfMembers() {
+        players.getNames()
+                .stream()
+                .forEach(name -> {
+                    Card card1 = getCard();
+                    Card card2 = getCard();
+                    cardsOfMembers.addCard(name, card1);
+                    cardsOfMembers.addCard(name, card2);
+                });
+    }
+
+    public Card getCard(){
+        return deck.getCard();
+    }
+
     public Players getPlayers() {
         return players;
     }
